@@ -1,0 +1,7 @@
+# Directories
+do_not_track/
+
+# File Extensions
+*.DS_Store
+
+# Individual Files
