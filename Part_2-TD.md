@@ -258,4 +258,4 @@ The below costs are estimated based on the requirements and current AWS pricing.
 
 ## APPENDIX
 
-- [Export of pricing from <https://calculator.aws/>](AWS_Pricing.pdf)
+- [Export of pricing from](AWS_Pricing.pdf) - [AWS Pricing Calculator](<https://calculator.aws/>)
