@@ -40,26 +40,26 @@ The following are some benefits of using AWS:
 
 Scalability and Elasticity: The cloud offers on-demand scalability, allowing FishTank Ltd. to allocate resources dynamically to meet fluctuating workloads and business growth. This flexibility ensures optimal resource utilisation without compromising service quality.
 
-- FishTank Ltd. can use Amazon EC2 (Elastic Compute Cloud) to scale dynamically compute resources based on demand. Auto Scaling can be configured to automatically adjust the number of EC2 instances based on predefined criteria.
+- FishTank Ltd. can use Amazon EC2 (Elastic Compute Cloud) to scale compute resources dynamically based on demand. Auto Scaling can be configured to automatically adjust the number of EC2 instances based on predefined criteria.
 - Amazon RDS (Relational Database Service) offers scalable database solutions, allowing FishTank Ltd. to handle varying workloads efficiently.
 - AWS Lambda provides serverless computing, enabling FishTank Ltd. to execute code responding to events without provisioning or managing servers.
 
 Disaster Recovery and Business Continuity: FishTank Ltd. currently needs a comprehensive disaster recovery solution. Migrating to the cloud enables FishTank Ltd. to implement robust backup and recovery mechanisms. Data redundancy across geographically distributed data centres mitigates the risk of prolonged downtime, ensuring uninterrupted service delivery.
 
 - Amazon S3 (Simple Storage Service) offers durable storage with built-in redundancy across multiple data centres.
-- AWS Backup provides a centralised backup solution for various AWS services, ensuring data protection and enabling easy recovery in case of disasters.
+- AWS Backup provides a centralised backup solution for various AWS services, ensuring data protection and easy recovery in case of disasters.
 - AWS Elastic Disaster Recovery (DRS) can replicate data and applications to another region for failover purposes.
 
 Cost Efficiency: FishTank Ltd can optimise IT expenditures by transitioning from a capital-intensive model to a pay-as-you-go subscription-based model. The cloud eliminates the need for upfront infrastructure investment and reduces operational overheads associated with maintenance and upgrades.
 
 - FishTank Ltd. can leverage AWS's pay-as-you-go pricing model, only paying for the resources they use.
 - AWS Cost Explorer helps monitor and manage costs by providing insights into usage patterns and cost-saving opportunities.
-- AWS Reserved Instances allow FishTank Ltd. to reserve capacity in advance for significant cost savings compared to on-demand pricing.
+- AWS Reserved Instances allow FishTank Ltd. to reserve capacity in advance, resulting in significant cost savings compared to on-demand pricing.
 
 Global Expansion Readiness: As FishTank Ltd aims to penetrate North America and APJC markets, the cloud provides a scalable platform for seamless geographic expansion. Leveraging cloud-based services enables rapid deployment of IT resources in new regions, facilitating market entry with minimal lead time.
 
 - AWS Global Infrastructure spans multiple regions worldwide, enabling FishTank Ltd. to deploy applications closer to end-users for improved performance.
-- Amazon Route 53 offers global DNS services, directing traffic to the nearest AWS region, thus reducing latency.
+- Amazon Route 53 offers global DNS services, directing traffic to the nearest AWS region and thus reducing latency.
 - AWS Global Accelerator optimises the global network path to improve the availability and performance of applications for users across different geographic locations.
 
 Security and Data Protection: Cloud vendors provide an end-to-end approach to secure infrastructure, including physical, operational, and software measures.
@@ -74,7 +74,7 @@ Cloud Migration Approach: Compared to outsourcing IT services, migrating to the 
 
 Migration Methodology: A "lift and shift" approach for initial application migration mitigates risk and accelerates time-to-value. This staged migration strategy minimises operational disruptions and optimises resource allocation. It involves moving your application and its data to the cloud with minimal changes, often using the same architecture and code as the original on-premises environments in Poland and Mexico.
 
-Limitations: It’s essential to carefully evaluate the suitability of the “lift and shift” approach for each application and consider the potential benefits and limitations. Lift and shift may not be suitable for all applications. Some applications may require significant refactoring to use cloud-native features and services, such as serverless computing or containerisation. Additionally, some applications may not be well-suited for the cloud due to security or compliance concerns.
+Limitations: It's essential to carefully evaluate the suitability of the "lift and shift" approach for each application and consider the potential benefits and limitations. Lift and shift may not be suitable for all applications. Some applications may require significant refactoring to use cloud-native features and services, such as serverless computing or containerisation. Additionally, some applications may not be well-suited for the cloud due to security or compliance concerns.
 
 Refactoring Strategy: Recognising the need to refactor legacy applications for enhanced agility, we propose a phased approach wherein code refactoring is integrated after the initial migration process. This minimises operational disruptions and ensures the long-term viability of your applications.
 
@@ -103,7 +103,7 @@ Application Architecture: Transitioning towards a microservices-oriented archite
 
 ## Handling Objections and Cultural Issues
 
-Change management is a systematic approach when transforming an organisation’s technologies. It involves implementing strategies for effecting and controlling change and helping people adapt. Effective change management is crucial for organisations to successfully navigate change challenges and ensure minimal disruption to their operations. The critical factors of successful change management are:
+Change management is a systematic approach when transforming an organisation's technologies. It involves implementing strategies for effecting and controlling change and helping people adapt. Effective change management is crucial for organisations to successfully navigate change challenges and ensure minimal disruption to their operations. The critical factors of successful change management are:
 
 - Communications Plan: A clear and timely communication plan is essential to inform stakeholders about the change, its impact, and the steps to be taken.
 - Executive Leadership: Strong executive leadership is critical to drive the change initiative and provide guidance and support to employees.
