@@ -1,7 +1,7 @@
 # FishTank Ltd Cloud Migration Plan
 
-- Prepared for: FishTank Ltd
-- Prepared by: Armstrong Cloud Migration Services Ltd
+- Prepared for FishTank Ltd
+- Prepared by Armstrong Cloud Migration Services Ltd
 - Date: 16th May 2024
 
 Dear Ryan Pothecary,
@@ -10,11 +10,11 @@ Thank you for considering Armstrong Cloud Migration Services Ltd. (ACMS), a trus
 
 Given your requirements, we appreciate the opportunity to provide a technical design for migrating your critical line-of-business application PETRA to the Amazon Web Services cloud. We understand that over 5,000 users across the UK constantly use PETRA during a working week.
 
-In response to the challenges associated with cloud migration, ensuring a smooth transition that minimises disruptions and maximises benefits is imperative. Our proposal aims to assist FishTank Ltd. By executing the migration process with precision and efficiency, leveraging industry best practices and cutting-edge technology, and providing ongoing support and maintenance. This includes regular system updates, performance monitoring, and troubleshooting, ensuring your cloud environment’s continued success and optimisation. We are committed to providing you with the support you need to fully leverage the benefits of the cloud.
+In response to the challenges associated with cloud migration, ensuring a smooth transition that minimises disruptions and maximises benefits is imperative. Our proposal aims to assist FishTank Ltd. By executing the migration process with precision and efficiency, leveraging industry best practices and cutting-edge technology, and providing ongoing support and maintenance. This includes regular system updates, performance monitoring, and troubleshooting, ensuring your cloud environment's continued success and optimisation. We are committed to providing you with the support you need to leverage the benefits of the cloud entirely.
 
-Our proposal is not a one-size-fits-all solution. We will meticulously develop a migration strategy tailored to FishTank Ltd.'s unique requirements and business objectives. This approach ensures that the transition to the cloud is seamless and perfectly aligns with your strategic vision. ACMS is committed to enabling FishTank Ltd. to enhance operational efficiency and scalability while reducing costs.
+Our proposal is not a one-size-fits-all solution. We will meticulously develop a migration strategy tailored to FishTank, Ltd.'s unique requirements and business objectives. This approach ensures that the transition to the cloud is seamless and perfectly aligns with your strategic vision. ACMS is committed to enabling FishTank Ltd. to enhance operational efficiency and scalability while reducing costs.
 
-By leveraging cloud technologies, we aim to streamline operations, improve agility, and ensure seamless scalability to meet evolving business demands. To achieve this, we have detailed a breakdown of AWS and ACMS costs, ensuring a successful partnership between FishTank Ltd and ACMS. We are eager to collaborate with you, Ryan, to implement a cloud-focused IT strategy that aligns with your vision and goals. Our team will be responsible for the technical aspects of the migration, while your team will provide the necessary business context and user feedback to ensure a successful transition.
+By leveraging cloud technology, user operations improve agility and ensure seamless scalability to meet evolving business demands. To achieve this, we have detailed a breakdown of AWS and ACMS costs, ensuring a successful partnership between FishTank Ltd and ACMS. We are eager to collaborate with you, Ryan, to implement a cloud-focused IT strategy that aligns with your vision and goals. Our team will be responsible for the technical aspects of the migration, while your team will provide the necessary business context and user feedback to ensure a successful transition.
 
 Regards
 
@@ -51,16 +51,16 @@ From the given [asset list](README.md#PETRA-Asset-List), the following assets co
 1. **Servers (S001 to S013):**
    - **Windows Server 2008** is no longer supported by Microsoft, so it is advisable to consider upgrading to a newer version before or during the migration.
    - **Domain Controller (S001):** Can be migrated to a cloud service offering such as AWS Directory Service.
-   - **Web Servers (S002 to S005):** These could be deployed on virtual machines in the cloud such as Amazon EC2.
+   - **Web Servers (S002 to S005):** These could be deployed on virtual machines in the cloud, such as Amazon EC2.
    - **Application Servers (S006 to S009):** These can be migrated to cloud-based virtual machines or platform-as-a-service (PaaS) offerings.
-   - **Print Servers (S010, S011):** Migrating print servers to the cloud is often unnecessary, especially if the primary users of the print services are within a local office environment. Migrating to the cloud might introduce latency and complexity in handling print jobs over the internet and add unnecessary cost. If there are remote users who need access to printing services, consider hybrid solutions.
+   - **Print Servers (S010, S011):** Migrating print servers to the cloud is often unnecessary, especially if the primary users of the print services are within a local office environment. Migrating to the cloud might introduce latency and complexity in handling print jobs over the internet and add unnecessary cost. If remote users need access to printing services, consider hybrid solutions.
    - **Database Servers (S012, S013):** These can be migrated to cloud-based database services like Amazon RDS.
 
 2. **Network Equipment:**
-   - **Firewall (N001), Switches (N002, N003):** Typically, these would not be migrated as they are physical network devices. However, equivalent network configurations can be set up using AWS services like AWS VPC, AWS Network Firewall, etc.
+   - **Firewall (N001), Switches (N002, N003):** Typically, these would not be migrated as they are physical network devices. However, we can set up equivalent network configurations using AWS services like AWS VPC, AWS Network Firewall, etc.
 
 3. **Shared Storage (SAN01):**
-   - SAN devices themselves cannot be directly migrated to AWS, but the data on them can be migrated. The SAN can be replaced with cloud storage solutions like Amazon S3, EBS, EFS or Amazon FSx for Windows File Server.
+   - SAN devices cannot be directly migrated to AWS; their data can be migrated. The SAN can be replaced with cloud storage solutions like Amazon S3, EBS, EFS or Amazon FSx for Windows File Server.
 
 ## Migration Strategy
 
@@ -96,7 +96,7 @@ Migrating assets to AWS involves a structured approach to ensure minimal disrupt
 - **Steps:**
   1. AWS Application Migration Service (MGN) to lift and shift the existing servers to AWS.
   2. Launch EC2 instances with EBS.
-  3. Ensure that the application servers are correctly configured with the necessary security groups and networking settings.
+  3. Ensure the application servers are correctly configured with the necessary security groups and networking settings.
   4. Test and ensure the application functions correctly in the new environment.
 
 ### 4. **Database Servers (S012, S013)**
@@ -124,7 +124,7 @@ Migrating assets to AWS involves a structured approach to ensure minimal disrupt
 
 ## General Steps for All Migrations
 
-By following these steps and leveraging AWS services effectively, FishTank Ltd can ensure a smooth and efficient migration of assets to the cloud.
+By following these steps and effectively leveraging AWS services, FishTank Ltd. can ensure a smooth and efficient migration of assets to the cloud.
 
 1. **Planning:**
    - Perform a detailed assessment of your current environment.
@@ -155,17 +155,17 @@ By following these steps and leveraging AWS services effectively, FishTank Ltd c
 
 ## Design Rationale
 
-The design for migrating PETRA to AWS focuses on leveraging AWS's scalability, security, and managed services. Here’s the rationale behind the critical design choices:
+The design for migrating PETRA to AWS focuses on leveraging AWS's scalability, security, and managed services. Here's the rationale behind the critical design choices:
 
 ### Assessment Services
 
-- **Migration Evaluator** gives you the insights that help accelerate decision-making for migration to AWS.
-- **Application Discovery Service (ADS)** within Migration Hub to discover on-premises servers and databases and their behavior to plan cloud migrations
+- **Migration Evaluator** gives you insights that help accelerate decision-making regarding migration to AWS.
+- **Application Discovery Service (ADS)** within Migration Hub to discover on-premises servers and databases and their behaviour to plan cloud migrations
 
 ### Migration Services
 
 - **AWS Application Migration Service (MGN)** simplifies and expedites your AWS migration by automatically converting your physical, virtual, or cloud servers to run natively on AWS.
-- **AWS Migration Hub** is the central location to collect server and application inventory data for the assessment, planning, and tracking of migrations to AWS.
+**AWS Migration Hub** is the central location for collecting server and application inventory data for assessing, planning, and tracking migrations to AWS.
 - **AWS Database Migration Service (AWS DMS)** helps you move your databases and analytics workloads to AWS quickly and securely.
 
 ### Data Transfer Services
@@ -181,7 +181,7 @@ The design for migrating PETRA to AWS focuses on leveraging AWS's scalability, s
 
 ### Security
 
-- Security Groups: Implement strict security rules to control inbound and outbound traffic, ensuring that only authorised users and services can access your data. We will also set up regular security audits and penetration tests to identify and address any potential vulnerabilities.
+- Security Groups: Implement strict rules to control inbound and outbound traffic, ensuring that only authorised users and services can access your data. We will also set up regular security audits and penetration tests to identify and address any potential vulnerabilities.
 - IAM Roles and Policies: Ensure least-privilege access to AWS resources.
 
 ### Compute
