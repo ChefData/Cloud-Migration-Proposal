@@ -20,13 +20,13 @@ Regards
 
 Nick Armstrong
 
-## Detailed design diagram
+## Architecture Diagram
 
 ![Architecture Design](Architecture_Design.png)
 
 The diagram illustrates the architecture for migrating the PETRA application to AWS, showcasing the different AWS services used, their interconnections, and the data flow.
 
-## Migrating assets
+## Assets to Migrate
 
 From the given [asset list](README.md#PETRA-Asset-List), the following assets could be migrated to AWS:
 
@@ -62,67 +62,7 @@ From the given [asset list](README.md#PETRA-Asset-List), the following assets co
 3. **Shared Storage (SAN01):**
    - SAN devices cannot be directly migrated to AWS; their data can be migrated. The SAN can be replaced with cloud storage solutions like Amazon S3, EBS, EFS or Amazon FSx for Windows File Server.
 
-## Migration Strategy
-
-Migrating assets to AWS involves a structured approach to ensure minimal disruption and efficient use of AWS services. Here is a step-by-step guide on how to migrate each type of asset:
-
-### 1. **Domain Controller (S001)**
-
-- **Service:** AWS Directory Service
-- **Steps:**
-  1. Set up AWS Directory Service for Microsoft Active Directory.
-  2. Use AD Connector to integrate your on-premises Active Directory with AWS Directory Service.
-  3. Migrate the domain controller data to AWS.
-
-- https://aws.amazon.com/solutions/partners/active-directory-ds/
-- https://aws-solutions-library-samples.github.io/cfn-ps-microsoft-activedirectory/
-- https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_ad_connector.html
-- https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html
-
-### 2. **Web Servers (S002 to S005)**
-
-- **Service:** Amazon EC2 and Amazon Elastic Block Store
-- **Steps:**
-  1. Create Amazon Machine Images (AMIs) of your current web servers.
-  2. Launch EC2 instances using these AMIs with EBS.
-  3. Configure security groups, load balancers, and DNS settings using Amazon Route 53.
-  4. Test and validate the web servers.
-
-- https://docs.aws.amazon.com/prescriptive-guidance/latest/migration-sql-server/welcome.html?did=pg_card&trk=pg_card
-
-### 3. **Application Servers (S006 to S009)**
-
-- **Service:** Amazon EC2 and Amazon Elastic Block Store
-- **Steps:**
-  1. AWS Application Migration Service (MGN) to lift and shift the existing servers to AWS.
-  2. Launch EC2 instances with EBS.
-  3. Ensure the application servers are correctly configured with the necessary security groups and networking settings.
-  4. Test and ensure the application functions correctly in the new environment.
-
-### 4. **Database Servers (S012, S013)**
-
-- **Service:** Amazon RDS (for SQL Server)
-- **Steps:**
-  1. Set up Amazon RDS for SQL Server.
-  2. Use the AWS Database Migration Service (DMS) to migrate databases from on-premises MS SQL Server to Amazon RDS.
-  3. Test database functionality and performance.
-  4. Update application connection strings to point to the new RDS instances.
-
-### 5. **Shared Storage (SAN01)**
-
-- **Service:** Amazon FSx for Windows File Server
-- **Steps:**
-  1. Identify the data to be migrated to cloud storage.
-  2. Use AWS Storage Gateway or AWS DataSync to transfer data from SAN to Amazon FSx.
-  3. Validate the integrity of the migrated data.
-  4. Update any necessary references in your applications to use the new cloud storage.
-
-- https://aws.amazon.com/fsx/windows/
-- https://aws.amazon.com/solutions/partners/eagledream-fsx-windows-file-server/
-- https://aws.amazon.com/blogs/architecture/field-notes-migrating-file-servers-to-amazon-fsx-and-integrating-with-aws-managed-microsoft-ad/
-- https://aws.amazon.com/blogs/storage/file-storage-migration-to-aws-in-one-month-using-aws-datasync-and-amazon-fsx/
-
-## General Steps for All Migrations
+## General Steps For All Migrations
 
 By following these steps and effectively leveraging AWS services, FishTank Ltd. can ensure a smooth and efficient migration of assets to the cloud.
 
@@ -153,7 +93,77 @@ By following these steps and effectively leveraging AWS services, FishTank Ltd. 
    - Monitor the migrated assets for performance and reliability.
    - Continuously optimise and update your cloud infrastructure as needed.
 
-## Design Rationale
+## Asset Migration Strategy
+
+Migrating assets to AWS involves a structured approach to ensure minimal disruption and efficient use of AWS services. Here is a step-by-step guide on how to migrate each type of asset:
+
+### 1. **Domain Controller (S001)**
+
+![AWS Directory Service](<https://digitalcloud.training/wp-content/uploads/2022/01/AWS-Directory-Services.jpg>)
+
+- **Service:** AWS Directory Service
+- **Steps:**
+  1. Set up AWS Directory Service for Microsoft Active Directory.
+  2. Use AD Connector to integrate your on-premises Active Directory with AWS Directory Service.
+  3. Migrate the domain controller data to AWS.
+
+- https://aws.amazon.com/solutions/partners/active-directory-ds/
+- https://aws-solutions-library-samples.github.io/cfn-ps-microsoft-activedirectory/
+- https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_ad_connector.html
+- https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html
+
+### 2. **Web Servers (S002 to S005)**
+
+![Amazon EC2](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-EC2.jpg>)
+
+- **Service:** Amazon EC2 and Amazon Elastic Block Store
+- **Steps:**
+  1. Create Amazon Machine Images (AMIs) of your current web servers.
+  2. Launch EC2 instances using these AMIs with EBS.
+  3. Configure security groups, load balancers, and DNS settings using Amazon Route 53.
+  4. Test and validate the web servers.
+
+- https://docs.aws.amazon.com/prescriptive-guidance/latest/migration-sql-server/welcome.html?did=pg_card&trk=pg_card
+
+### 3. **Application Servers (S006 to S009)**
+
+![Amazon EBS](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-EBS.jpg>)
+
+- **Service:** Amazon EC2 and Amazon Elastic Block Store
+- **Steps:**
+  1. AWS Application Migration Service (MGN) to lift and shift the existing servers to AWS.
+  2. Launch EC2 instances with EBS.
+  3. Ensure the application servers are correctly configured with the necessary security groups and networking settings.
+  4. Test and ensure the application functions correctly in the new environment.
+
+### 4. **Database Servers (S012, S013)**
+
+![Amazon RDS](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-RDS.jpg>)
+
+- **Service:** Amazon RDS (for SQL Server)
+- **Steps:**
+  1. Set up Amazon RDS for SQL Server.
+  2. Use the AWS Database Migration Service (DMS) to migrate databases from on-premises MS SQL Server to Amazon RDS.
+  3. Test database functionality and performance.
+  4. Update application connection strings to point to the new RDS instances.
+
+### 5. **Shared Storage (SAN01)**
+
+![Amazon FSx](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-FSx.jpg>)
+
+- **Service:** Amazon FSx for Windows File Server
+- **Steps:**
+  1. Identify the data to be migrated to cloud storage.
+  2. Use AWS Storage Gateway or AWS DataSync to transfer data from SAN to Amazon FSx.
+  3. Validate the integrity of the migrated data.
+  4. Update any necessary references in your applications to use the new cloud storage.
+
+- https://aws.amazon.com/fsx/windows/
+- https://aws.amazon.com/solutions/partners/eagledream-fsx-windows-file-server/
+- https://aws.amazon.com/blogs/architecture/field-notes-migrating-file-servers-to-amazon-fsx-and-integrating-with-aws-managed-microsoft-ad/
+- https://aws.amazon.com/blogs/storage/file-storage-migration-to-aws-in-one-month-using-aws-datasync-and-amazon-fsx/
+
+## Architecture Design Rationale
 
 The design for migrating PETRA to AWS focuses on leveraging AWS's scalability, security, and managed services. Here's the rationale behind the critical design choices:
 
@@ -162,18 +172,28 @@ The design for migrating PETRA to AWS focuses on leveraging AWS's scalability, s
 - **Migration Evaluator** gives you insights that help accelerate decision-making regarding migration to AWS.
 - **Application Discovery Service (ADS)** within Migration Hub to discover on-premises servers and databases and their behaviour to plan cloud migrations
 
+### Durability
+
+- Availability Zone: isolated or separated data centres located within specific regions.
+
 ### Migration Services
 
+![AWS Migration Hub](<https://digitalcloud.training/wp-content/uploads/2022/01/AWS-migration-Services-Cheat-Sheets.png>)
+
 - **AWS Application Migration Service (MGN)** simplifies and expedites your AWS migration by automatically converting your physical, virtual, or cloud servers to run natively on AWS.
-**AWS Migration Hub** is the central location for collecting server and application inventory data for assessing, planning, and tracking migrations to AWS.
+- **AWS Migration Hub** is the central location for collecting server and application inventory data for assessing, planning, and tracking migrations to AWS.
 - **AWS Database Migration Service (AWS DMS)** helps you move your databases and analytics workloads to AWS quickly and securely.
 
 ### Data Transfer Services
+
+![AWS DataSync](<https://digitalcloud.training/wp-content/uploads/2022/06/AWS-DataSync.jpg>)
 
 - **AWS DataSync** simplifies and accelerates data migration to AWS
 - **AWS Database Migration Service (AWS DMS)** is a managed migration and replication service that helps move your database and analytics workloads to AWS quickly, securely, and with minimal downtime and zero data loss.
 
 ### VPC and Subnets
+
+![Amazon VPC](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-VPC.jpg>)
 
 - VPC: Creates a logically isolated network environment.
 - Subnets: Separate web and application servers in different subnets to enhance security and management.
@@ -181,32 +201,40 @@ The design for migrating PETRA to AWS focuses on leveraging AWS's scalability, s
 
 ### Security
 
+![AWS IAM](<https://digitalcloud.training/wp-content/uploads/2022/01/AWS-IAM.jpg>)
+
 - Security Groups: Implement strict rules to control inbound and outbound traffic, ensuring that only authorised users and services can access your data. We will also set up regular security audits and penetration tests to identify and address any potential vulnerabilities.
 - IAM Roles and Policies: Ensure least-privilege access to AWS resources.
 
 ### Compute
+
+![Auto Scaling](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-EC2-Auto-Scaling.jpg>)
 
 - EC2 Instances: Amazon EC2 instances are used for web and application servers, allowing flexible scaling based on demand.
 - Auto Scaling Groups: Automatically adjust the number of EC2 instances based on traffic patterns. This ensures that your application can handle high-traffic loads without any performance issues while reducing costs during periods of low traffic.
 
 ### Database
 
+![Amazon RDS](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-RDS.jpg>)
+
 - Amazon RDS: Amazon RDS is used for SQL Server to manage the database with automated backups, patching, and high availability.
 
 ### Load Balancing
+
+![AWS ELB](<https://digitalcloud.training/wp-content/uploads/2022/01/AWS-Elastic-Load-Balancing-AWS-ELB.jpg>)
 
 - Elastic Load Balancer (ELB): Distribute incoming traffic across multiple web servers to ensure high availability and reliability.
 
 ### Networking
 
+![Amazon Route 53](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-Route-53.jpg>)
+
 - Internet Gateway and NAT Gateway: Provide secure internet access to the VPC.
 - Route 53: Manage DNS routing for the application.
 
-### Durability
-
-- Availability Zone: isolated or separated data centres located within specific regions.
-
 ### Monitoring and Management
+
+![Amazon CloudWatch](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-CloudWatch.jpg>)
 
 - CloudWatch: Monitor system performance and set up alerts for critical events. This service allows us to proactively identify and address potential issues, ensuring that your application is always available and performs optimally.
 - CloudTrail: Enable governance, compliance, and operational and risk auditing of the AWS account.
