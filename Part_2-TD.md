@@ -101,35 +101,28 @@ Migrating assets to AWS involves a structured approach to ensure minimal disrupt
 
 ![AWS Directory Service](<https://digitalcloud.training/wp-content/uploads/2022/01/AWS-Directory-Services.jpg>)
 
-- **Service:** AWS Directory Service
+- **Service:** [AWS Directory Service](https://aws.amazon.com/directoryservice/)
 - **Steps:**
   1. Set up AWS Directory Service for Microsoft Active Directory.
   2. Use AD Connector to integrate your on-premises Active Directory with AWS Directory Service.
   3. Migrate the domain controller data to AWS.
 
-- https://aws.amazon.com/solutions/partners/active-directory-ds/
-- https://aws-solutions-library-samples.github.io/cfn-ps-microsoft-activedirectory/
-- https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_ad_connector.html
-- https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html
-
 ### 2. **Web Servers (S002 to S005)**
 
 ![Amazon EC2](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-EC2.jpg>)
 
-- **Service:** Amazon EC2 and Amazon Elastic Block Store
+- **Service:** [Amazon EC2](https://aws.amazon.com/ec2/) and [Amazon Elastic Block Store](https://aws.amazon.com/ebs/)
 - **Steps:**
   1. Create Amazon Machine Images (AMIs) of your current web servers.
   2. Launch EC2 instances using these AMIs with EBS.
   3. Configure security groups, load balancers, and DNS settings using Amazon Route 53.
   4. Test and validate the web servers.
 
-- https://docs.aws.amazon.com/prescriptive-guidance/latest/migration-sql-server/welcome.html?did=pg_card&trk=pg_card
-
 ### 3. **Application Servers (S006 to S009)**
 
 ![Amazon EBS](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-EBS.jpg>)
 
-- **Service:** Amazon EC2 and Amazon Elastic Block Store
+- **Service:** [Amazon EC2](https://aws.amazon.com/ec2/) and [Amazon Elastic Block Store](https://aws.amazon.com/ebs/)
 - **Steps:**
   1. AWS Application Migration Service (MGN) to lift and shift the existing servers to AWS.
   2. Launch EC2 instances with EBS.
@@ -140,7 +133,7 @@ Migrating assets to AWS involves a structured approach to ensure minimal disrupt
 
 ![Amazon RDS](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-RDS.jpg>)
 
-- **Service:** Amazon RDS (for SQL Server)
+- **Service:** [Amazon RDS (for SQL Server)](https://aws.amazon.com/rds/sqlserver/)
 - **Steps:**
   1. Set up Amazon RDS for SQL Server.
   2. Use the AWS Database Migration Service (DMS) to migrate databases from on-premises MS SQL Server to Amazon RDS.
@@ -151,17 +144,12 @@ Migrating assets to AWS involves a structured approach to ensure minimal disrupt
 
 ![Amazon FSx](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-FSx.jpg>)
 
-- **Service:** Amazon FSx for Windows File Server
+- **Service:** [Amazon FSx for Windows File Server](https://aws.amazon.com/fsx/windows/)
 - **Steps:**
   1. Identify the data to be migrated to cloud storage.
   2. Use AWS Storage Gateway or AWS DataSync to transfer data from SAN to Amazon FSx.
   3. Validate the integrity of the migrated data.
   4. Update any necessary references in your applications to use the new cloud storage.
-
-- https://aws.amazon.com/fsx/windows/
-- https://aws.amazon.com/solutions/partners/eagledream-fsx-windows-file-server/
-- https://aws.amazon.com/blogs/architecture/field-notes-migrating-file-servers-to-amazon-fsx-and-integrating-with-aws-managed-microsoft-ad/
-- https://aws.amazon.com/blogs/storage/file-storage-migration-to-aws-in-one-month-using-aws-datasync-and-amazon-fsx/
 
 ## Architecture Design Rationale
 
