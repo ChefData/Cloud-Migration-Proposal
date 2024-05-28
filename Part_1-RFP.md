@@ -38,34 +38,81 @@ Our proposal will use Amazon Web Services (AWS) as a case study for moving FishT
 
 The following are some benefits of using AWS:
 
-Scalability and Elasticity: The cloud offers on-demand scalability, allowing FishTank Ltd. to allocate resources dynamically to meet fluctuating workloads and business growth. This flexibility ensures optimal resource utilisation without compromising service quality.
+### Scalability and Elasticity
+
+The cloud offers on-demand scalability, allowing FishTank Ltd. to allocate resources dynamically to meet fluctuating workloads and business growth. This flexibility ensures optimal resource utilisation without compromising service quality.
+
+![Amazon EC2](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-EC2.jpg>)
 
 - FishTank Ltd. can use Amazon EC2 (Elastic Compute Cloud) to scale compute resources dynamically based on demand. Auto Scaling can be configured to automatically adjust the number of EC2 instances based on predefined criteria.
+
+![Amazon RDS](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-RDS.jpg>)
+
 - Amazon RDS (Relational Database Service) offers scalable database solutions, allowing FishTank Ltd. to handle varying workloads efficiently.
+
+![AWS Lambda](<https://digitalcloud.training/wp-content/uploads/2022/01/AWS-Lambda.jpg>)
+
 - AWS Lambda provides serverless computing, enabling FishTank Ltd. to execute code responding to events without provisioning or managing servers.
 
-Disaster Recovery and Business Continuity: FishTank Ltd. currently needs a comprehensive disaster recovery solution. Migrating to the cloud enables FishTank Ltd. to implement robust backup and recovery mechanisms. Data redundancy across geographically distributed data centres mitigates the risk of prolonged downtime, ensuring uninterrupted service delivery.
+### Disaster Recovery and Business Continuity
+
+FishTank Ltd. currently needs a comprehensive disaster recovery solution. Migrating to the cloud enables FishTank Ltd. to implement robust backup and recovery mechanisms. Data redundancy across geographically distributed data centres mitigates the risk of prolonged downtime, ensuring uninterrupted service delivery.
+
+![Amazon S3](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-S3-and-Glacier.jpg>)
 
 - Amazon S3 (Simple Storage Service) offers durable storage with built-in redundancy across multiple data centres.
+
+![AWS Backup](<https://digitalcloud.training/wp-content/uploads/2022/01/AWS-Backup.jpg>)
+
 - AWS Backup provides a centralised backup solution for various AWS services, ensuring data protection and easy recovery in case of disasters.
+
+![Elastic Disaster Recovery](<https://d1.awsstatic.com/CloudEndure%20Disaster%20Recovery/aws-elastic-disaster-recovery-how-it-works.b0a329374332171c7048c82e957ca16325abb6fa.png>)
+
 - AWS Elastic Disaster Recovery (DRS) can replicate data and applications to another region for failover purposes.
 
-Cost Efficiency: FishTank Ltd can optimise IT expenditures by transitioning from a capital-intensive model to a pay-as-you-go subscription-based model. The cloud eliminates the need for upfront infrastructure investment and reduces operational overheads associated with maintenance and upgrades.
+### Cost Efficiency
+
+FishTank Ltd can optimise IT expenditures by transitioning from a capital-intensive model to a pay-as-you-go subscription-based model. The cloud eliminates the need for upfront infrastructure investment and reduces operational overheads associated with maintenance and upgrades.
+
+![pay-as-you-go](<https://digitalcloud.training/wp-content/uploads/2022/02/AWS-Billing-and-Pricing.jpg>)
 
 - FishTank Ltd. can leverage AWS's pay-as-you-go pricing model, only paying for the resources they use.
+
+![pay-as-you-go](<https://digitalcloud.training/wp-content/uploads/2022/01/AWS-Cost-Management.jpg>)
+
 - AWS Cost Explorer helps monitor and manage costs by providing insights into usage patterns and cost-saving opportunities.
 - AWS Reserved Instances allow FishTank Ltd. to reserve capacity in advance, resulting in significant cost savings compared to on-demand pricing.
 
-Global Expansion Readiness: As FishTank Ltd aims to penetrate North America and APJC markets, the cloud provides a scalable platform for seamless geographic expansion. Leveraging cloud-based services enables rapid deployment of IT resources in new regions, facilitating market entry with minimal lead time.
+### Global Expansion Readiness
+
+As FishTank Ltd aims to penetrate North America and APJC markets, the cloud provides a scalable platform for seamless geographic expansion. Leveraging cloud-based services enables rapid deployment of IT resources in new regions, facilitating market entry with minimal lead time.
+
+![AWS Global Infrastructure](<https://media.licdn.com/dms/image/D5612AQFvMitbJg488A/article-inline_image-shrink_1000_1488/0/1692120306136?e=1722470400&v=beta&t=xwrXoAd9d6MxI74veHT-AKQ7I4rPU_J5bzRpUEaZJRo>)
 
 - AWS Global Infrastructure spans multiple regions worldwide, enabling FishTank Ltd. to deploy applications closer to end-users for improved performance.
+
+![Amazon Route 53](<https://digitalcloud.training/wp-content/uploads/2022/01/Amazon-Route-53.jpg>)
+
 - Amazon Route 53 offers global DNS services, directing traffic to the nearest AWS region and thus reducing latency.
+
+![AWS Global Accelerator](<https://digitalcloud.training/wp-content/uploads/2022/01/AWS-Global-Accelerator.jpg>)
+
 - AWS Global Accelerator optimises the global network path to improve the availability and performance of applications for users across different geographic locations.
 
-Security and Data Protection: Cloud vendors provide an end-to-end approach to secure infrastructure, including physical, operational, and software measures.
+### Security and Data Protection
+
+Cloud vendors provide an end-to-end approach to secure infrastructure, including physical, operational, and software measures.
+
+![AWS IAM](<https://digitalcloud.training/wp-content/uploads/2022/01/AWS-IAM.jpg>)
 
 - AWS provides a wide range of security services such as AWS Identity and Access Management (IAM), AWS Key Management Service (KMS), and AWS CloudTrail for monitoring and auditing.
+
+![Compliance](<https://www.dashsdk.com/wp-content/uploads/2018/12/aws-certifications.jpg>)
+
 - AWS offers compliance certifications such as ISO, SOC, and PCI DSS, ensuring that FishTank Ltd. meets industry standards for data protection.
+
+![AWS Shield](<https://digitalcloud.training/wp-content/uploads/2022/01/AWS-WAF-and-Shield.jpg>)
+
 - AWS Shield provides DDoS protection, shielding applications running on AWS against the largest and most sophisticated DDoS attacks.
 
 ## Technical Implementation
