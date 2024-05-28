@@ -34,6 +34,8 @@ Our current IT staff have no knowledge of Cloud and therefore we are looking for
 
 As part of your proposal, we expect a document no larger than 5 pages which should contain Short, Medium and Long-term goals. We also want to understand how you’d handle objections and cultural issues that arise from such a project.
 
+[Part 1 Output](Part_1-RFP.md)
+
 ## Part 2 - Technical Design
 
 After receiving good advice from its trusted partners, FishTank Ltd. has decided to move its business to the Cloud. They feel very confident in your ability to migrate their entire business to the cloud, so they will focus the next few weeks on getting their first production workload running on AWS with your help.
@@ -64,7 +66,9 @@ We will award the contract based on migrating the entire Fishtank Ltd business b
 
 Many thanks for your efforts, and good luck.
 
-### Appendix
+[Part 2 Output](Part_2-TD.md)
+
+### TD Appendix
 
 #### PETRA details
 
