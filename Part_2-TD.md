@@ -155,6 +155,20 @@ Migrating assets to AWS involves a structured approach to ensure minimal disrupt
 
 The design for migrating PETRA to AWS focuses on leveraging AWS's scalability, security, and managed services. Here's the rationale behind the critical design choices:
 
+### Structure
+
+The architecture has been organised into a three-tier web application. Each tier has a specific role and is responsible for a particular aspect of the application’s functionality.
+
+- Client-Tier (Web Tier): This tier represents the user interface of the application and is responsible for presenting data to the user and receiving user input. It includes the graphical user interface (GUI) components, such as web pages, forms, and widgets.
+- Application-Tier (Middle Tier): This tier is responsible for processing user requests and interacting with the database. It includes the business logic of the application, such as data validation, calculation, and formatting.
+- Database-Tier (Backend): This tier is responsible for storing and retrieving data. It includes the database management system, such as relational databases.
+
+Benefits:
+
+- Modularity: Each tier is independent and can be developed, tested, and deployed separately, making it easier to maintain and update the application.
+- Scalability: Each tier can be scaled independently, allowing the application to scale more efficiently and effectively.
+- Flexibility: The three-tier architecture allows for the use of different technologies and programming languages for each tier, making it more flexible and adaptable to changing requirements.
+
 ### Assessment Services
 
 - **Migration Evaluator** gives you insights that help accelerate decision-making regarding migration to AWS.
